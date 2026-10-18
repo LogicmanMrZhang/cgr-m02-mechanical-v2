@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="CGR-M02 V2 雪茄卷制设备机械助力概念运动演示。">
+ <meta name="theme-color" content="#f5f6f7"><link rel="icon" href="data:,">
+ <title>CGR-M02 · 机械助力 V2</title>
+ <link rel="canonical" href="https://logicmanmrzhang.github.io/cgr-m02-mechanical-v2/">
+ <link rel="alternate" type="text/html" title="模型说明与静态截图" href="./model.html">
+ <meta property="og:title" content="CGR-M02 · 机械助力 V2">
+ <meta property="og:description" content="交互式 3D 概念机械模型：手柄、连杆、同步轴、双凸轮与钢索弹簧同进度联动。未经实物验证。">
+ <meta property="og:image" content="https://logicmanmrzhang.github.io/cgr-m02-mechanical-v2/preview.png">
+  <script type="module" crossorigin src="./assets/index-DX4Kj2DJ.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CRyDEWFT.css">
+</head>
+<body>
+ <noscript><p>交互演示需要 JavaScript 和 WebGL。<a href="./model.html">查看模型说明与静态截图</a>。</p></noscript>
+ <main id="app">
+  <header class="masthead"><div><span class="eyebrow">CGR–M02</span><h1>机械助力 <span>V2</span></h1></div><p class="concept"><i></i>概念动画 · 未经实物验证</p></header>
+  <section id="viewport" aria-label="可交互的机械模型"><div id="loading">正在加载机械模型…</div><div id="labels" aria-hidden="true"><svg class="leaders"><line data-leader="O"/><line data-leader="P"/><line data-leader="S"/></svg><span data-anchor="O">O</span><span data-anchor="P">P</span><span data-anchor="S">S</span></div></section>
+  <nav class="viewbar" aria-label="观察视角"><button data-view="all" aria-pressed="true">全机</button><button data-view="side" aria-pressed="false">侧视</button><button data-view="front" aria-pressed="false">正视</button><button data-view="under" aria-pressed="false">台下</button><span class="divider"></span><button id="reset" title="恢复全机视角和默认显示，不改变行程">重置视图</button></nav>
+  <details id="layers" class="layers" aria-label="部件显示" open><summary>显示设置</summary><div class="layer-options">
+    <label class="table-control">工作台<select id="table-mode" aria-label="工作台显示"><option value="ghost">半透明</option><option value="solid">实体</option><option value="hidden">隐藏</option></select></label>
+    <label class="check-control"><input type="checkbox" id="upper" checked><span>显示原机</span></label>
+    <button id="isolate" aria-pressed="false">只看台下新增件 <span>↗</span></button>
+  </div></details>
+  <aside id="part-card" hidden aria-live="polite"><div class="part-top"><span class="eyebrow">部件查看</span><button id="close-part" aria-label="关闭部件说明">×</button></div><h2 id="part-name"></h2><p id="part-description"></p></aside>
+  <div class="stage-notes"><div class="legend"><span><i class="silver"></i>原机</span><span><i class="blue"></i>新增传动</span><span><i class="orange"></i>钢索 / 弹簧</span></div><p>P · O · S 为待核对的概念传力接口</p></div>
+  <div class="interaction-hint">拖动旋转 · 滚轮缩放 · 右键平移 · 点击查看零件</div>
+  <section class="transport" aria-label="机械运动控制">
+   <div class="transport-top"><div class="state-label"><span id="status-dot"></span><span id="phase">原位 · 弹簧已拉伸</span></div><output id="progress-value" for="progress">0<span>%</span></output></div>
+   <div class="control-row">
+    <div class="playback"><button id="play" class="play" aria-label="播放完整推进回退" title="播放一次推进与回退"><svg viewBox="0 0 20 20" aria-hidden="true"><path id="play-icon" d="M6 3.8 16 10 6 16.2Z"/></svg><span id="play-text">播放</span></button><button id="forward" title="从当前位置前推到位">前推 <span>→</span></button><button id="backward" title="从当前位置回退到原位"><span>←</span> 回退</button></div>
+    <input type="range" id="progress" aria-label="机械行程进度" min="0" max="1000" step="1" value="0">
+    <label class="speed"><span>速度</span><select id="speed" aria-label="播放速度"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label>
+   </div>
+   <div class="keyframes" aria-label="关键位置"><button data-progress="0" class="active">原位</button><button data-progress="0.5">上推中段</button><button data-progress="1">推到位</button></div>
+  </section>
+  <div id="error" hidden role="alert"><h2>模型未能运行</h2><p id="error-message"></p><button id="reload">重新加载</button></div>
+ </main>
+</body>
+</html>

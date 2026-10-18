@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>CGR-M02 机械助力 V2 — 模型说明与截图</title>
+ <meta name="description" content="无需运行 JavaScript 即可读取的机械助力 V2 概念模型说明和实际演示截图。">
+ <style>body{max-width:900px;margin:40px auto;padding:0 20px;font:17px/1.8 system-ui,sans-serif;color:#23313b;background:#f7f8fa}a{color:#087ba1}h1{font-size:28px}h2{font-size:21px;margin-top:28px}img{width:100%;height:auto;border:1px solid #dce1e5;border-radius:12px}figure{margin:24px 0}figcaption{font-size:14px;color:#52606c}li{margin:6px 0}</style>
+</head>
+<body>
+ <main>
+  <h1>CGR-M02 · 机械助力 V2</h1>
+  <p><a href="./">打开交互式 3D 演示</a> · <a href="./preview.png">打开完整截图</a></p>
+  <p>本页提供可直接读取的模型说明和静态截图。交互演示由 Three.js 渲染；静态截图不能证明整段动画或实机性能。</p>
+  <figure><img src="./preview.png" width="1440" height="940" alt="CGR-M02 机械助力 V2 的实际演示截图：上方为银色原机手柄、卷辊、黑色卷布和放料凹槽；工作台下方是蓝色连杆、同步轴及左右凸轮，橙色钢索连接两侧拉伸弹簧。底部提供播放、前推、回退、进度与速度控制。"><figcaption>本地完成验证的交互演示截图，原位、全机视角。概念动画，未经实物验证。</figcaption></figure>
+  <h2>传动关系</h2>
+  <p>上推手柄 → 原机活动构件绕固定支点 O 摆动 → 下部连接点 P 驱动定长连杆 → 曲柄带动固定同步轴 S → 左右凸轮同相转动 → 钢索经过导向轮牵动两侧弹簧。</p>
+  <p>前推时弹簧缩短，表达释能；回退时所有运动反向，弹簧重新拉伸，表达储能。手柄、连杆、曲柄、凸轮、钢索和弹簧均由同一个行程进度驱动。</p>
+  <h2>部件与操作</h2>
+  <ul>
+   <li>银灰色：原机手柄、卷辊、支架；黑色：卷布及放料凹槽所在区域。</li>
+   <li>蓝色：台下新增连杆、曲柄、同步轴与左右凸轮。</li>
+   <li>橙色：钢索、导向及拉伸弹簧；两侧对称布置。</li>
+   <li>播放一次完成前推和回退；可暂停、单向运动、拖动进度或调节速度。</li>
+   <li>可自由旋转、缩放和平移，切换全机、侧视、正视、台下视角，点击零件查看名称与作用，隐藏工作台或原机上部。</li>
+  </ul>
+  <h2>模型边界</h2>
+  <p>P、O、S 的连接位置是概念假设。本演示使用自洽的参数化几何近似：定长连杆闭环求解、固定轴心、钢索长度约束及弹簧端点联动。卷布形状和弹簧钩端是示意，未进行材料接触或受力仿真。</p>
+  <p>模型中的比例不是经测量确认的安装尺寸；不代表已验证的省力率、工程载荷、加工方案、安全防护或实机性能。此网页仅展示机械助力 V2，未修改冻结的电动化 V5 方案。</p>
+ </main>
+</body>
+</html>
